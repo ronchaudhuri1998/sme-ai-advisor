@@ -16,10 +16,7 @@ from prompts import build_system_prompt, build_user_prompt
 from pdf_generator import generate_pdf
 from pricing import collect_all_pricing, format_pricing_for_prompt
 
-ANTHROPIC_API_KEY = os.environ.get(
-    "ANTHROPIC_API_KEY",
-    ""
-)
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
 app = FastAPI(title="SME AI Advisor API")
 
