@@ -682,7 +682,7 @@ async function runGenerate() {
   try {
     document.getElementById("gen-detail").textContent = "Claude is analysing your profile — 20–40 seconds…";
 
-    const resp = await fetch("http://localhost:8000/api/recommend", {
+    const resp = await fetch("https://sme-ai-advisor-production.up.railway.app/api/recommend", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -728,7 +728,7 @@ async function generatePdfBackground(result) {
   const pdfBtn = document.getElementById("pdf-btn");
   if (pdfBtn) { pdfBtn.disabled = true; pdfBtn.textContent = "⏳ Building PDF…"; }
   try {
-    const resp = await fetch("http://localhost:8000/api/pdf", {
+    const resp = await fetch("https://sme-ai-advisor-production.up.railway.app/api/pdf", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ result, industry: selInd }),
